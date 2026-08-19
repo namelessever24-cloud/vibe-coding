@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#fff8fb" />
+    <title>오늘의 태그</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="app-header">
+        <div>
+          <p class="eyebrow">ONE TAP DAILY RECORD</p>
+          <h1>오늘의 태그 <span aria-hidden="true">✦</span></h1>
+          <div class="date-picker-row">
+            <p id="todayDate" class="today-date"></p>
+            <input id="recordDate" class="date-input" type="date" aria-label="기록할 날짜 선택" />
+            <button id="todayButton" class="today-button" type="button">오늘</button>
+          </div>
+        </div>
+        <button id="themeToggle" class="icon-button" type="button" aria-label="다크 모드 켜기" title="다크 모드">
+          <span aria-hidden="true">☾</span>
+        </button>
+      </header>
+
+      <nav class="view-tabs" aria-label="화면 선택">
+        <button class="view-tab active" type="button" data-view="record" aria-selected="true">오늘 기록</button>
+        <button class="view-tab" type="button" data-view="stats" aria-selected="false">통계</button>
+      </nav>
+
+      <div id="recordView" class="view-panel">
+        <section class="intro-card" aria-labelledby="tagHeading">
+          <div>
+            <h2 id="tagHeading">오늘은 어떤 하루였나요?</h2>
+            <p>떠오르는 답만 가볍게 골라 보세요. 전부 고르지 않아도 괜찮아요.</p>
+          </div>
+          <p id="selectionCount" class="selection-count" aria-live="polite">0개 선택</p>
+        </section>
+
+        <section id="tagCategories" class="tag-categories" aria-label="오늘의 태그 선택"></section>
+
+        <section class="note-card" aria-labelledby="noteHeading">
+          <div class="note-heading-row">
+            <div>
+              <h2 id="noteHeading">한 줄 남기기 <span aria-hidden="true">✏️</span></h2>
+              <p>오늘 있었던 일, 기억하고 싶은 순간, 문득 든 생각을 가볍게 남겨봐.</p>
+            </div>
+            <span id="noteCount" class="note-count">0 / 80</span>
+          </div>
+          <textarea id="dailyNote" maxlength="80" rows="2" placeholder="예: 퇴근길 하늘이 예뻤음 / 다시 운동 좀 해볼까 싶었다"></textarea>
+        </section>
+
+        <section class="actions" aria-label="기록 관리">
+          <button id="saveButton" class="primary-button" type="button">오늘 기록 저장하기</button>
+          <button id="deleteButton" class="secondary-button" type="button">오늘 기록 삭제</button>
+          <p id="statusMessage" class="status-message" aria-live="polite"></p>
+        </section>
+
+        <section class="history-section" aria-labelledby="historyHeading">
+          <div class="section-title-row">
+            <div>
+              <p class="eyebrow">MY LITTLE WEEK</p>
+              <h2 id="historyHeading">최근 7일 기록</h2>
+            </div>
+            <span class="history-hint">나의 작은 일주일</span>
+          </div>
+          <div id="historyList" class="history-list"></div>
+        </section>
+      </div>
+
+      <section id="statsView" class="view-panel" hidden aria-labelledby="statsHeading">
+        <div class="stats-header">
+          <div>
+            <p class="eyebrow">MY PATTERNS</p>
+            <h2 id="statsHeading">나의 기록 통계</h2>
+            <p>기록이 쌓일수록 나의 하루 패턴이 선명해져요.</p>
+          </div>
+          <div class="range-toggle" aria-label="통계 기간">
+            <button class="range-button active" type="button" data-days="7">7일</button>
+            <button class="range-button" type="button" data-days="30">30일</button>
+          </div>
+        </div>
+
+        <div class="stats-grid">
+          <article class="stat-card stat-card-highlight">
+            <span class="stat-label">기록한 날</span>
+            <strong id="recordedDays" class="stat-value">0일</strong>
+            <span id="recordRate" class="stat-caption">오늘부터 시작해봐요</span>
+          </article>
+          <article class="stat-card">
+            <span class="stat-label">가장 많았던 기분</span>
+            <strong id="topRating" class="stat-value stat-value-text">아직 없음</strong>
+          </article>
+          <article class="stat-card">
+            <span class="stat-label">가장 많이 한 활동</span>
+            <strong id="topActivity" class="stat-value stat-value-text">아직 없음</strong>
+          </article>
+          <article class="stat-card">
+            <span class="stat-label">자주 느낀 몸 상태</span>
+            <strong id="topBody" class="stat-value stat-value-text">아직 없음</strong>
+          </article>
+          <article class="stat-card">
+            <span class="stat-label">나를 칭찬한 횟수</span>
+            <strong id="praiseCount" class="stat-value">0번</strong>
+          </article>
+        </div>
+
+        <article class="trend-card">
+          <div class="trend-heading">
+            <div>
+              <span class="stat-label">기분 변화 흐름</span>
+              <h3>하루의 온도</h3>
+            </div>
+            <span class="trend-guide">좋음 ↑</span>
+          </div>
+          <div id="moodChart" class="mood-chart" aria-label="기간별 기분 변화"></div>
+          <p id="chartEmpty" class="chart-empty">평가 기록이 쌓이면 흐름을 보여드릴게요.</p>
+        </article>
+
+        <article class="review-card">
+          <div class="review-heading">
+            <div>
+              <span class="review-badge">무료 · 기기 안에서 분석</span>
+              <h3>이번 주 자동 회고</h3>
+              <p>저장된 최근 7일 기록으로 짧은 회고를 만들어요.</p>
+            </div>
+            <button id="reviewButton" class="primary-button" type="button">✨ 돌아보기</button>
+          </div>
+          <div id="reviewResult" class="review-result" hidden aria-live="polite"></div>
+        </article>
+      </section>
+    </main>
+
+    <template id="categoryTemplate">
+      <section class="category-card">
+        <div class="category-heading">
+          <h3></h3>
+          <p class="category-hint"></p>
+        </div>
+        <div class="chip-list"></div>
+      </section>
+    </template>
+
+    <script src="app.js"></script>
+  </body>
+</html>
