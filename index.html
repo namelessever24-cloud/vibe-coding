@@ -38,6 +38,17 @@
           <p id="selectionCount" class="selection-count" aria-live="polite">0개 선택</p>
         </section>
 
+        <section class="news-card" aria-labelledby="newsHeading">
+          <div class="news-heading-row">
+            <h2 id="newsHeading">오늘의 세상 한 조각 <span aria-hidden="true">🗞️</span></h2>
+            <div class="news-heading-actions">
+              <span id="newsCount" class="news-count"></span>
+              <button id="newsMoreButton" class="news-toggle-button" type="button" hidden aria-expanded="false">펼쳐보기 ⌄</button>
+            </div>
+          </div>
+          <ol id="newsList" class="news-list" aria-live="polite" hidden></ol>
+        </section>
+
         <section id="tagCategories" class="tag-categories" aria-label="오늘의 태그 선택"></section>
 
         <section class="note-card" aria-labelledby="noteHeading">
@@ -67,6 +78,7 @@
           </div>
           <div id="historyList" class="history-list"></div>
         </section>
+
       </div>
 
       <section id="statsView" class="view-panel" hidden aria-labelledby="statsHeading">
@@ -142,6 +154,7 @@
       </section>
     </template>
 
+    <script src="news-data.js"></script>
     <script src="app.js"></script>
   </body>
 </html>

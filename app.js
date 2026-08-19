@@ -17,6 +17,7 @@ let selected = createEmptySelection();
 let praiseDetails = {};
 let praiseDetailsContainer;
 let activeStatsDays = 7;
+let showAllNews = false;
 
 const el = {
   date: document.querySelector("#todayDate"), datePicker: document.querySelector("#recordDate"), todayButton: document.querySelector("#todayButton"),
@@ -29,7 +30,9 @@ const el = {
   rangeButtons: document.querySelectorAll(".range-button"), recordedDays: document.querySelector("#recordedDays"),
   recordRate: document.querySelector("#recordRate"), topRating: document.querySelector("#topRating"), topActivity: document.querySelector("#topActivity"),
   topBody: document.querySelector("#topBody"), praiseCount: document.querySelector("#praiseCount"), moodChart: document.querySelector("#moodChart"),
-  chartEmpty: document.querySelector("#chartEmpty"), reviewButton: document.querySelector("#reviewButton"), reviewResult: document.querySelector("#reviewResult")
+  chartEmpty: document.querySelector("#chartEmpty"), reviewButton: document.querySelector("#reviewButton"), reviewResult: document.querySelector("#reviewResult"),
+  newsList: document.querySelector("#newsList"), newsCount: document.querySelector("#newsCount"),
+  newsMoreButton: document.querySelector("#newsMoreButton")
 };
 
 function dateKey(date) {
@@ -115,7 +118,44 @@ function selectRecordDate(value) {
   activeDateKey = value;
   updateActiveDateUI();
   loadActiveDate();
+  showAllNews = false;
+  renderNews();
   renderHistory();
+}
+
+function renderNews() {
+  const archive = window.NEWS_ARCHIVE || {};
+  const day = archive[activeDateKey];
+  const items = Array.isArray(day?.items) ? day.items : [];
+  el.newsList.innerHTML = "";
+  el.newsCount.textContent = items.length ? `${items.length}건` : "";
+
+  if (!items.length) {
+    el.newsList.hidden = false;
+    const empty = document.createElement("li");
+    empty.className = "news-empty";
+    empty.textContent = "이 날짜에 저장된 뉴스가 아직 없어요.";
+    el.newsList.append(empty);
+    el.newsMoreButton.hidden = true;
+    return;
+  }
+
+  el.newsList.hidden = !showAllNews;
+  items.forEach((item) => {
+    const row = document.createElement("li");
+    row.className = "news-item";
+    const link = document.createElement("a");
+    link.href = item.google_news_url;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    link.textContent = item.title;
+    row.append(link);
+    el.newsList.append(row);
+  });
+
+  el.newsMoreButton.hidden = false;
+  el.newsMoreButton.setAttribute("aria-expanded", String(showAllNews));
+  el.newsMoreButton.textContent = showAllNews ? "접기 ⌃" : "펼쳐보기 ⌄";
 }
 
 function renderCategories() {
@@ -525,10 +565,12 @@ el.rangeButtons.forEach((button) => button.addEventListener("click", () => {
   renderStats(Number(button.dataset.days));
 }));
 el.reviewButton.addEventListener("click", createWeeklyReview);
+el.newsMoreButton.addEventListener("click", () => { showAllNews = !showAllNews; renderNews(); });
 
 renderCategories();
 setTheme(localStorage.getItem(THEME_KEY) || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"));
 updateActiveDateUI();
 loadActiveDate();
+renderNews();
 renderHistory();
 renderStats(7);

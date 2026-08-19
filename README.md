@@ -41,6 +41,12 @@
 - 이번 주 기록 요약
 - 잘한 점과 다음 주를 위한 제안 제공
 
+### 🗞️ 그날의 주요 뉴스
+- 기록 날짜에 맞는 구글 뉴스 주요 기사 표시
+- 기사 제목, 언론사, 게시 시각 확인
+- 뉴스 제목을 눌러 원문 열기
+- `뉴스 업데이트.command`를 더블클릭해 오늘 뉴스를 날짜별로 누적
+
 ## 🛠 기술 스택
 
 - HTML
@@ -53,6 +59,10 @@
 ├── index.html
 ├── style.css
 ├── app.js
+├── news-data.js
+├── news-archive.json
+├── update_news.py
+├── 뉴스 업데이트.command
 ├── AGENTS.md
 └── README.md
 

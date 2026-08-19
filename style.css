@@ -80,6 +80,20 @@ textarea { display: block; width: 100%; resize: vertical; padding: 12px 13px; bo
 textarea:focus { border-color: var(--primary); box-shadow: 0 0 0 3px color-mix(in srgb, var(--primary) 16%, transparent); }
 textarea::placeholder { color: var(--muted); }
 
+.news-card { margin: -6px 0 20px; padding: 14px 16px; border: 1px solid var(--border); border-radius: 15px; background: color-mix(in srgb, #edf8ff 42%, var(--surface)); }
+.news-heading-row { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.news-heading-row h2 { margin: 0; font-size: 1rem; }
+.news-heading-actions { display: flex; align-items: center; gap: 8px; }
+.news-count { flex: none; padding: 5px 9px; border-radius: 99px; background: #edf8ff; color: #36759d; font-size: 0.76rem; font-weight: bold; }
+.news-list { display: grid; gap: 0; margin: 16px 0 0; padding: 0; list-style: none; }
+.news-list[hidden] { display: none; }
+.news-item { display: grid; gap: 5px; padding: 12px 2px; border-top: 1px dashed var(--border); }
+.news-item a { color: var(--text); font-size: 0.9rem; font-weight: bold; line-height: 1.45; text-decoration: none; }
+.news-item a:hover { color: var(--primary); text-decoration: underline; text-underline-offset: 3px; }
+.news-empty { padding: 18px 2px 3px; border-top: 1px dashed var(--border); color: var(--muted); font-size: 0.86rem; }
+.news-toggle-button { padding: 5px 8px; border: 0; border-radius: 8px; background: transparent; color: var(--primary); font-size: 0.78rem; font-weight: bold; }
+.news-toggle-button:hover { background: var(--surface); }
+
 .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin: 27px 0 48px; }
 .primary-button, .secondary-button { min-height: 49px; padding: 12px 20px; border-radius: 13px; font-weight: bold; }
 .primary-button { border: 1px solid var(--primary); background: var(--primary); color: white; box-shadow: 0 8px 15px rgba(233, 93, 145, 0.24); }
@@ -156,6 +170,8 @@ body.dark .history-more { background: #4a3d4d; color: var(--muted); }
 body.dark .range-button.active { background: #482d3a; }
 body.dark .stat-card-highlight { background: linear-gradient(145deg, #452d3a, var(--surface)); border-color: #674457; }
 body.dark .review-badge { background: #29453f; color: #9bd6ca; }
+body.dark .news-count { background: #293f4d; color: #9acbeb; }
+body.dark .news-card { background: linear-gradient(145deg, #29323c, var(--surface)); }
 
 @media (max-width: 640px) {
   .app-shell { width: min(100% - 24px, 880px); padding-top: 28px; }
