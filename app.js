@@ -158,6 +158,31 @@ function renderNews() {
   el.newsMoreButton.textContent = showAllNews ? "접기 ⌃" : "펼쳐보기 ⌄";
 }
 
+async function loadLatestNews() {
+  if (!/^https?:$/.test(window.location.protocol)) return;
+
+  const hasTodayNews = Array.isArray(window.NEWS_ARCHIVE?.[todayKey]?.items);
+  if (!hasTodayNews) el.newsCount.textContent = "불러오는 중";
+
+  try {
+    const response = await fetch("/api/news", { headers: { Accept: "application/json" } });
+    if (!response.ok) throw new Error(`뉴스 API ${response.status}`);
+    const news = await response.json();
+    if (!news.date || !Array.isArray(news.items)) throw new Error("올바르지 않은 뉴스 데이터");
+
+    window.NEWS_ARCHIVE = window.NEWS_ARCHIVE || {};
+    window.NEWS_ARCHIVE[news.date] = {
+      collected_at: news.collected_at,
+      source: news.source,
+      items: news.items
+    };
+    renderNews();
+  } catch (error) {
+    console.warn("자동 뉴스 업데이트를 건너뛰었습니다.", error);
+    renderNews();
+  }
+}
+
 function renderCategories() {
   categories.forEach((category) => {
     const card = el.template.content.cloneNode(true);
@@ -572,5 +597,6 @@ setTheme(localStorage.getItem(THEME_KEY) || (window.matchMedia("(prefers-color-s
 updateActiveDateUI();
 loadActiveDate();
 renderNews();
+loadLatestNews();
 renderHistory();
 renderStats(7);

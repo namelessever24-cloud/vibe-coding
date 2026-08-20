@@ -39,5 +39,39 @@
         "google_news_url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTFA2dFhXVklUQlZRVWc5WHNLTkFqZFpnV1pJejBjYmNHSnYxd3FjeVdLUFZETy1lTXBnbHZsVG0tS2h2bUs0TlRfMXVETjJqS09IbGJaOFFVQjZrb2tZNkE?oc=5"
       }
     ]
+  },
+  "2026-08-20": {
+    "collected_at": "2026-08-20T15:02:16+09:00",
+    "source": "Google 뉴스 RSS · 분야별 균형 선별",
+    "items": [
+      {
+        "title": "서버 지키던 AI, 사람 건강 살핀다...모아데이타, 태국 검증 거쳐 CIS로 헬스케어 영토 확장",
+        "category": "생활·사회",
+        "source": "팜이데일리",
+        "published_at": "2026-08-20T14:21:48+09:00",
+        "google_news_url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE0tNVJyX0hRb2NxT05ockhUSmJhcUk5LWZXekNIaUVpcGZaNExxR3lJQ0NYcjg1WF9lYVBVYk5fdUwwVjJLRkUxaENBS09nWEk0UVBuMVQ5WjlWY2tTSUN6YWNscTNHS25aZ1lFMkNn?oc=5"
+      },
+      {
+        "title": "[기업 이모저모] 유가 예측도 인공지능으로…AI 서밋 가보니",
+        "category": "과학·IT",
+        "source": "연합인포맥스",
+        "published_at": "2026-08-20T13:23:28+09:00",
+        "google_news_url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE5SeGR5ZWpJbzVwSTVMMG43Ym9xZGY2UXlNeTVaME5taWphZU0tdmdEcDJEVHprMnJPUHp4clRyUmQ4RzNoZnNlbjBQUmdLd0ZSekpsQjRpTEZnczFLQ25Md2lHLU5DSG1ocjdDUXNTYjM?oc=5"
+      },
+      {
+        "title": "정부, 8800억 초장기펀드 가동…AI·반도체 외 첨단산업에 40% 투자",
+        "category": "경제·세계",
+        "source": "전자신문",
+        "published_at": "2026-08-20T14:20:33+09:00",
+        "google_news_url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE50QlFCVnJyY2wwRW5xXy1hbzFOQUQwWF9aVThPRW1pYWJPS19FV2JnLUNSU2NWWFJYRWxhRkwyVXl4NGNJLWIyS0JQRXVTdw?oc=5"
+      },
+      {
+        "title": "AI로 선거보도 자동화… 기사 4200개 하룻밤 새 발행",
+        "category": "정치",
+        "source": "한국기자협회",
+        "published_at": "2026-08-20T08:56:31+09:00",
+        "google_news_url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFAxWXJENFNmckpoNHJXc3Fkd0NUUmlnZmNHWkQwMkhyMHJDQ1FjeUVObEIzdVBRV3NGTU92cnMwSGQwbG94QlY5MEVLblNVZjRrRjBOUjIxMEctV1ZZajlxeTRB?oc=5"
+      }
+    ]
   }
 }
