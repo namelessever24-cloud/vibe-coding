@@ -165,7 +165,7 @@ async function loadLatestNews() {
   if (!hasTodayNews) el.newsCount.textContent = "불러오는 중";
 
   try {
-    const response = await fetch("/api/news", { headers: { Accept: "application/json" } });
+    const response = await fetch(`/api/news?date=${todayKey}`, { headers: { Accept: "application/json" } });
     if (!response.ok) throw new Error(`뉴스 API ${response.status}`);
     const news = await response.json();
     if (!news.date || !Array.isArray(news.items)) throw new Error("올바르지 않은 뉴스 데이터");

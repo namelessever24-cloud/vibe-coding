@@ -73,5 +73,46 @@ window.NEWS_ARCHIVE = {
         "google_news_url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFAxWXJENFNmckpoNHJXc3Fkd0NUUmlnZmNHWkQwMkhyMHJDQ1FjeUVObEIzdVBRV3NGTU92cnMwSGQwbG94QlY5MEVLblNVZjRrRjBOUjIxMEctV1ZZajlxeTRB?oc=5"
       }
     ]
+  },
+  "2026-08-21": {
+    "collected_at": "2026-08-21T10:51:50+09:00",
+    "source": "Google 뉴스 RSS · 분야별 균형 선별",
+    "items": [
+      {
+        "title": "[날씨] 중부 비·남부 소나기...습도 높아 체감온도 상승",
+        "category": "생활·사회",
+        "source": "YTN",
+        "published_at": "2026-08-21T06:47:00+09:00",
+        "google_news_url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE5wbVc5UWF5cDliVFdmc2dRQzFXRmdIWWluTVFsVTRteHMzSEJRZDRCNElLdDFIRE9YU2FiWHg1Y0E1YlprZ3BWUUtTVmI1ZlZIQUdrSk81bFAwOVhPc2c?oc=5"
+      },
+      {
+        "title": "광양제철소, 백운아트홀에서 최신 영화 ‘호프’ 무료 상영",
+        "category": "문화·연예",
+        "source": "포스코그룹 뉴스룸",
+        "published_at": "2026-08-21T09:52:22+09:00",
+        "google_news_url": "https://news.google.com/rss/articles/CBMisAJBVV95cUxQQldIaFlBYjd4N1B2T2dmNmR6dV9oeVZLM3YwbWU2X0lvb0NFWlpuNl9XVS1FaTlnX1NXYlVfQ2hrMFNDOXRuc3A4QlZFMDZUSl9NeFltRFNVV3poNW53Q0Q5OVBxT2p0NVJQcTVjQ051Q0dIU0NUZ1Vyc2poU3B5ZmZIbW5PWVdrWHU2M0h1T25IVGVZUG8ydE01a3cxZmg0NWdUUFNHWWZkRmFrM2p5TklaN0FRNERhNmNJdGNqRV9ZYzFSa0pWTFRVejZST3JYa280LUtYT0VpSF81ZjZhcG1XYVJIOEhDajhZZ282eVVOYUVyM28tcnJxVWtMQUpZZU9yTURhMEgxOTdOYXFMaThKLThWNngwY0xnSS10MzF2NksxRGxFMW85bjhDV3dj?oc=5"
+      },
+      {
+        "title": "[인사] 과학기술정보통신부",
+        "category": "과학·IT",
+        "source": "동아사이언스",
+        "published_at": "2026-08-21T10:21:33+09:00",
+        "google_news_url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE9FS0oxR3dVZjhaVHhXR19FUktqdkFfU0FoMzVUbFhLRk81OTA2T1VBV1A3a3RtOWFlRDkyY1VrZGtsNFNRcEFmeWNaT0R0Yk0xa01HWA?oc=5"
+      },
+      {
+        "title": "구윤철 \"금융·외환·부동산 통합관리체계 가동…필요시 적기 대응\"",
+        "category": "경제·세계",
+        "source": "연합인포맥스",
+        "published_at": "2026-08-21T09:44:51+09:00",
+        "google_news_url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1zckxpcUlJWEVhenhqcFoxdDR3Y0dwYVc2UldFU1lhN1NHRFJWNHQwUlBXaUlIcUU2MEdWazJjQm03SnVaM2ViZEJ1MUJrdEJyM2ZDU2puZDdCekhKemVlOElXYnd1LUNOR0dVOTVOZ3nSAXRBVV95cUxNSkM5bWVhNVVYcmpaaUZQX05iS0N1dmJqdmpiNEctQzZCcEtoM1B3TG5pWHFJUWhCakRkRUZkS3VCdVpmM1k3WUtjeGJTNzROUmhwTzNOTGYtSDJZY2pJaV9SZF9HcjFnUFRFZUVfU1dSd24xSQ?oc=5"
+      },
+      {
+        "title": "이 대통령, 국회 ’패스트트랙 단축법’ 가결에 “일 신속히 돌아가 기뻐“",
+        "category": "정치",
+        "source": "연합뉴스TV",
+        "published_at": "2026-08-21T09:01:00+09:00",
+        "google_news_url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1NVHB6SGRlZmJ1a2lDRHltTWs3MGdFSjhFQl9TQVVnZkk4dnBWVjlXeUFGeFotLVNnbXlkNjJzWTNvZmMzTUZzQ0FOOTZCRHg5U3ZONTBJa0VCWUFtblJtVmcyaGZLZ3c?oc=5"
+      }
+    ]
   }
 };
